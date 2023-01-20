@@ -1,0 +1,83 @@
+//переменные через $name: attribute;
+$main-color: #ff0;
+$light-white: rgba(255, 255, 255, .5);
+$light-black: rgba(0, 0, 0, .3);
+$light-bg: rgba(255, 255, 255, .1);
+$white: #fff;
+$black: #000;
+$main-font: 'Comfortaa', cursive;
+
+
+@media (max-width: 991px){
+  
+  html{
+    font-size: 55%;
+  }
+
+  .heading {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+  }
+
+}
+
+@media (max-width: 768px){
+  
+  .header .flex #menu-btn{
+    display: inline-block;
+    
+  }
+
+  .header .flex{
+    position: relative;
+  }
+
+  .header .flex .navbar{
+    position: absolute;
+    top: 100%;left: 2rem;right: 2rem;
+    background-color: $light-black;
+    backdrop-filter: blur(.4rem);
+    border-radius: .5rem;
+    transform: scale(0);
+    transform-origin: top right;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    padding: 1.5rem ;
+    
+  }
+  .header .flex .navbar.active{
+    transform: scale(1);
+    transition: .2s linear;
+  }
+
+  .header .flex .navbar a{
+    display: block;
+    padding: 1.5rem .5rem;
+    margin: .5rem 1.5rem;
+    color: $white;
+    border-radius: .5rem;
+  }
+
+  .header .flex .navbar a:hover{
+    background: #FFFFB3;
+    backdrop-filter: blur(.3);
+    color: #000;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+}
+
+@media (max-width: 450px){
+  
+  html{
+    font-size: 50%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+
+}

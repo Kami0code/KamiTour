@@ -1,0 +1,492 @@
+@charset "UTF-8";
+@import "refreshstyle.scss";
+//@import "media.scss";
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+
+//переменные через $name: attribute;
+$main-color: #ff0;
+$light-white: rgba(255, 255, 255, .5);
+$light-black: rgba(0, 0, 0, .3);
+$light-bg: rgba(255, 255, 255, .1);
+$white: #fff;
+$black: #000;
+$main-font: 'Comfortaa', cursive;
+
+//Шаблон через %name {attributs: property} запуск через @extend %name
+%hover-color {
+  background: rgba(60, 96, 74, .7);
+  backdrop-filter: blur(.6);
+}
+
+//миксины через @mixin name($name) {attribute: $name} запуск через @include name(property)
+
+
+//Основной код
+
+* {
+  font-family: $main-font  ;
+}
+
+html {
+  font-size: 62.5%;;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+*::selection {
+  background-color: $main-color;
+  color: $black;
+}
+
+*::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+  background: $white;
+}
+
+//--------------------------------------------------
+
+
+body{
+  background: $black;
+  overflow-x: hidden;
+  height: auto;
+}
+
+section{
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.heading {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 7rem;
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.container{
+  padding-top: 10rem;
+}
+
+.btn {
+  display: block;
+  border-radius: .5rem;
+  padding: 1.2rem 3rem;
+  background: $main-color;
+  color: $black;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  transition: .2s linear;
+    &:hover {
+      background: $light-black;
+      color: $white;
+    }
+}
+
+///////////////////////////--HEADER--/////////////////////////////////
+
+.header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: linear-gradient(0deg, transparent, $black);
+  z-index: 1000;
+    .flex{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+        .logo{
+          font-size: 2.5rem;
+          color: $main-color;
+          text-decoration: underline;
+        }
+        .navbar a{
+          margin-left: 2rem;
+          font-size: 1.8rem;
+          color: $light-white;
+          transition: .2s linear;
+        }
+        .navbar a:hover{
+          color: $white;
+        }
+        #menu-btn{
+          font-size: 2.5rem;
+          cursor: pointer;
+          color: $white;
+          display: none;
+        }
+    }
+}
+///////////////////////////--HOME--/////////////////////////////////
+.home {
+  background: url('../images/home-bg-new.jpg') center / cover no-repeat fixed rgba(0, 0, 0, .5);
+  background-blend-mode: multiply;
+    & .flex {
+      min-height: calc(100vh - 10rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        form {
+          background: $light-bg;
+          border-radius: .5rem;
+          padding: 2rem;
+          width: 50rem;
+          backdrop-filter: blur(.4rem);
+            h3 {
+              font-size: 2.5rem;
+              color: $white;
+              padding-bottom: 1rem;
+              text-align: center;
+            }
+            .box {
+              width: 100%;
+              border-radius: .5rem;
+              padding: 1.4rem;
+              font-size: 1.8rem;
+              color: $white;
+              text-transform: none;
+              background: $light-black;
+              margin: 1rem 0;
+                &::placeholder {
+                  color: $light-white;
+                }
+            }
+            p {
+              padding-top: 1rem;
+              font-size: 1.7rem;
+              color: $light-white;
+            }
+        }
+    }
+}
+///////////////////////////--ABOUT--/////////////////////////////////
+.about {
+  background: url('../images/about-bg-new.jpg') center / cover no-repeat fixed rgba(0, 0, 0, .8);
+  background-blend-mode: multiply;
+    .details {
+      border-radius: .5rem;
+      background: url('../images/details-bg-new.jpg') center / cover no-repeat fixed rgba(0, 0, 0, .7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 60vh;
+      border-radius: .5rem;
+        .box {
+          width: 50rem;
+          background: $light-bg;
+          padding: 3rem 2rem;
+          text-align: center;
+          backdrop-filter: blur(.4rem);
+          border-radius: .5rem;
+            h3 {
+              padding-bottom: 1rem;
+              font-size: 2.5rem;
+              color: $white;
+            }
+            p {
+              padding: 1rem 0;
+              font-size: 1.5rem;
+              color: $black ;
+              line-height: 2;
+            }
+            .btn {
+              display: inline-block;
+              width: auto;
+            }
+        }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 30rem);
+      //align-items: flex-start;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+        .box {
+          background: $light-bg;
+          padding: 2rem;
+          text-align: center;
+          backdrop-filter: blur(.4rem);
+          border-radius: .5rem;
+          //height: 55vh;
+            img {
+              height: 25rem;
+              transition: .2s linear;
+            }
+            h3 {
+              padding: 2rem 0;
+              font-size: 1.9rem;
+              color: $white;
+            }
+            p{
+              line-height: 1.7;
+              font-size: 1.6rem;
+              color: $light-white;
+            }
+            &:hover {
+              //background-color: #3C604A;
+              @extend %hover-color
+            }
+            &:hover img{
+              transform: scale(1.1);
+            }
+        }
+    }
+}
+///////////////////////////--ABOUT-REVIEW--/////////////////////////////////
+.reviews {
+  background: url('../images/reviews-bg-new.jpg') center / cover no-repeat fixed rgba(0, 0, 0, .6);
+  background-blend-mode: multiply;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 35rem);
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.5rem;
+        .box {
+          background: $light-bg;
+          padding: 2rem;
+          text-align: center;
+          backdrop-filter: blur(.4rem);
+          border-radius: .5rem;
+            img {
+              height: 8rem;
+              width: 8rem;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 1rem;
+            }
+            h3{
+              font-size: 2rem;
+              color: $white;
+            }
+            p{
+              padding: 1rem 0;
+              line-height: 2;
+              color: $light-white;
+              font-size: 1.5rem;
+            }
+            .stars {
+              margin-top: 1rem;
+                i {
+                  font-size: 1.8rem;
+                  color: $main-color;
+                }
+            }
+            &:hover {
+              background: rgba(3, 49, 78, .6);
+            }
+        }
+    }
+}
+///////////////////////////--TOURS--/////////////////////////////////
+.tours {
+  background: url('../images/tour-bg-new.jpg') center / cover no-repeat fixed rgba(0, 0, 0, .6);
+  background-blend-mode: multiply;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 35rem);
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.5rem;
+        .box {
+          background: $light-bg;
+          padding: 2rem;
+          backdrop-filter: blur(.4rem);
+          border-radius: .5rem;
+          position: relative;
+            .price {
+              position: absolute;
+              top: 2.8rem; left: 3rem;
+              border-radius: .5rem;
+              background: $light-black;
+              font-size: 1.8rem;
+              padding: .8rem 1rem ;
+                i {
+                  color: $main-color;
+                  margin-right: .5rem;
+                }
+                span {
+                  color: $white;
+                }
+            }
+            .image {
+              height: 20rem;
+              width: 100%;
+              object-fit: cover;
+              border-radius: .5rem;
+              margin-bottom: 2rem;
+            }
+            .name {
+              font-size: 2rem;
+              color: $white;
+            }
+            .address {
+              font-size: 1.7rem;
+              color: $light-white;
+              line-height: 1.5;
+              padding: .5rem 0;
+            }
+            &:hover {
+              background-color: $light-black;
+            }
+            &:hover .price{
+              background-color: $black;
+            }
+          }
+    }
+}
+///////////////////////////--DESTINATIONS--/////////////////////////////////
+.destinations{
+  background: url('../images/destination-bg.jpg') center / cover no-repeat fixed rgba(0, 0, 0, .5);
+  background-blend-mode: multiply;
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 30rem);
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.5rem;
+        .box{
+          position: relative;
+          height: 40rem;
+          overflow: hidden;
+          border-radius: .5rem;
+          box-shadow: 0 0 15px rgba(42, 50, 55, .8);
+            img{
+              height: 100%; width: 100%;
+              object-fit: cover;
+            }
+            h3{
+              position: absolute;
+              top: 0; left: 0;
+              height: 100%;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: $light-black;
+              backdrop-filter: blur(.4rem);
+              transition: .2s linear;
+              opacity: 0;
+                span {
+                  color: $white ;
+                }
+            }
+            &:hover h3{
+              opacity: 1;
+            }
+        }
+    }
+}
+///////////////////////////--CONTACT--/////////////////////////////////
+.contact{
+  background: url('../images/contact-bg.jpg') center / cover no-repeat fixed rgba(0, 0, 0, .5);
+  background-blend-mode: multiply;
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+        .map{
+          width: 100%;
+          flex: 1 1 40rem;
+          padding: 2rem;
+          background: $light-bg;
+          border-radius: .5rem;
+          backdrop-filter: blure(.4rem);
+        }
+        form{
+          flex: 1 1 40rem;
+          padding: 2rem;
+          background: $light-bg;
+          border-radius: .5rem;
+          backdrop-filter: blur(.4rem);
+            h3{
+              text-align: center;
+              font-size: 2.5rem;
+              color: $white;
+              padding-bottom: 1rem;
+            }
+            .box{
+              width: 100%;
+              margin: 1rem 0;
+              border-radius: .5rem;
+              background: $light-black;
+              padding: 1.4rem;
+              font-size: 1.8rem;
+              color: $white;
+                &::placeholder{
+                  color: $light-white;
+                }
+            }
+            textarea{
+              height: 15rem;
+              resize: none;
+            }
+        }
+    }
+    .grid{
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 30rem);
+      //align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      .box{
+        padding: 3rem 2rem;
+        background: $light-bg;
+        border-radius: .5rem;
+        backdrop-filter: blur(.4rem);
+        text-align: center;
+          i{
+            height: 5rem;
+            width: 6rem;
+            line-height: 5rem;
+            font-size: 2.5rem;
+            background: $light-black;
+            border-radius: .5rem;
+            color: $white;
+            margin-bottom: 1.5rem;
+          }
+          h3{
+            padding: .5rem 0;
+            font-size: 2rem;
+            color: $main-color;
+          }
+          a{
+            display: block;
+            padding-top: 1rem;
+            font-size: 1.6rem;
+            color: $light-white;
+            line-height: 1.5;
+            text-transform: none;
+              &:hover {
+                color: $white;
+                text-decoration: underline;
+              }
+          }
+      }
+    }
+    .credit {
+      text-align: center;
+      font-size: 2rem;
+      padding-top: 1.5rem;
+      padding-bottom: 2rem;
+      color: $light-white;
+        span{
+          color: $main-color;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!--font awesome cdn link-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+	
+
+	<title>home</title>
+</head>
+<body style="overflow: hidden;">
+		<!--header section starts-->
+<!--////////////////////////////////////////////////////////////////////////-->
+		<header class="header" data-aos="zoom-out" data-aos-delay="500" data-aos-duration="800">
+
+			<section class="flex">
+
+				<a href="home.html" class="logo">KamiTravel.</a>
+
+				<nav class="navbar">
+					<a href="home.html">Главная</a>
+					<a href="about.html">О нас</a>
+					<a href="tour.html">Туры</a>
+					<a href="destinations.html">Направления</a>
+					<a href="contact.html">Контакты</a>
+				</nav>
+
+				<div id="menu-btn" class="fas fa-bars"></div>
+
+			</section>
+
+		</header>
+<!--////////////////////////////////////////////////////////////////////////-->
+		<!--header section ends-->
+
+<!--home section starts-->
+<!--////////////////////////////////////////////////////////////////////////-->
+		<div class="container home" data-aos="zoom-out">
+
+			<section class="flex" data-aos="zoom-in" data-aos-delay="500">
+
+				<form action="" method="post">
+					<h3>Найдите свой тур</h3>
+					<p>Куда</p>
+					<input type="text" name="location" required maxlength="50" placeholder="Введите интересующий вас тур" class="box">
+					<p>Когда</p>
+					<input type="date" name="date" class="box" required>
+					<p>Сколько персон</p>
+					<input type="number" name="guests" min="0" max="10" maxlength="2" placeholder="Количество гостей" class="box" required>
+					<input type="submit" value="Начать поиск" name="search" class="btn">
+				</form>
+
+			</section>
+
+		</div>
+<!--////////////////////////////////////////////////////////////////////////-->
+<!--home section ends-->
+
+	<!--custom js file-->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="js/script.js"></script>
+
+	
+	
+</body>
+</html>
